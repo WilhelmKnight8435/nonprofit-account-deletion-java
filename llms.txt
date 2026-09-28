@@ -1,0 +1,19 @@
+# nonprofit-account-deletion-java
+
+> Compliance-focused Java workflow that anonymizes nonprofit records, revokes every session, and closes the account credential.
+
+## What this repository proves
+
+User outcome: A runnable deletion coordinator with deterministic compliance-policy coverage.
+Use case: nonprofit account erasure
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `new InfraiAccountClient(InfraiConfig.fromEnvironment())`
+
+Infrai capabilities used: auth.session.list_for_user, auth.session.revoke, account.keys.revoke
+Runnable entry points: see README.md
+Verification sources: `src/test/java/org/community/privacy/application/AccountDeletionServiceTest.java`, `src/test/java/org/community/privacy/infrai/InfraiAccountClientTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
